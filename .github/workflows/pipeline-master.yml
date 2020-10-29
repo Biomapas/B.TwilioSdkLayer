@@ -23,7 +23,9 @@ jobs:
           pip list
 
       - name: Test
-        run: cd b_twilio_sdk_layer_test && cdk synth && cd ..
+        run: |
+          docker --version
+          cd b_twilio_sdk_layer_test && cdk synth && cd ..
 
       - name: Install
         run: pip install wheel twine

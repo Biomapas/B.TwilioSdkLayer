@@ -1,5 +1,8 @@
 # Release history
 
+### 0.0.2
+* Ensure that cdk application works by running `cdk synth` command.
+
 ### 0.0.1
 * Initial build.
 * Twilio SDK 6.46.0.

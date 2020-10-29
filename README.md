@@ -9,6 +9,10 @@ in AWS architectures where Twilio logic is being handled with lambda
 functions. Simply include this layer when creating a lambda function
 to enable Twilio functionality.
 
+**NOTE!** In order to use this layer, a `docker` command must be available
+on your machine. It is because the CDK runs a bundling command on a 
+docker container to create the Twilio dependency.
+
 ### Remarks
 
 [Biomapas](https://biomapas.com) aims to modernise life-science 

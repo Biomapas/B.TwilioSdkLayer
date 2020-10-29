@@ -1,5 +1,8 @@
 # Release history
 
+### 0.0.3
+* Add disclaimer that `docker` is required.
+
 ### 0.0.2
 * Ensure that cdk application works by running `cdk synth` command.
 

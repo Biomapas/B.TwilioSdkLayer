@@ -18,11 +18,13 @@ class Layer(LayerVersion):
                 bundling=BundlingOptions(
                     image=BundlingDockerImage.from_registry('python:3.9'),
                     command=[
-                        'bash', '-c',
-                        (
-                            'pip install -r requirements.txt -t /asset-output/python && '
-                            'find /asset-output -type f -name "*.py[co]" -delete && '
-                            'find /asset-output -type d -name "__pycache__" -delete'
+                        'bash', '-c', ' && '.join(
+                            [
+                                'pip install -r requirements.txt -t /tmp/asset-output/python',
+                                'find /tmp/asset-output -type f -name "*.py[co]" -delete',
+                                'find /tmp/asset-output -type d -name "__pycache__" -delete',
+                                'cp -R /tmp/asset-output/. /asset-output/.'
+                            ]
                         )
                     ]
                 )

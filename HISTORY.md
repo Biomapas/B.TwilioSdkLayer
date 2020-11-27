@@ -1,5 +1,9 @@
 # Release history
 
+### 0.0.4
+* Update Docker bundling commands. Use bash to move files between directories instead of installing with `-t` flag.
+Related issue: https://github.com/pypa/pip/issues/103
+
 ### 0.0.3
 * Add disclaimer that `docker` is required.
 

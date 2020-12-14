@@ -1,5 +1,8 @@
 # Release history
 
+### 0.0.6
+* Add latest boto version to tests.
+
 ### 0.0.5
 * Add ability to bundle boto3 library. Simply specify
 version in the constructor.

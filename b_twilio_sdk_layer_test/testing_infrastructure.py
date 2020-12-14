@@ -20,5 +20,5 @@ class TestingInfrastructure(Stack):
             ),
             handler='index.handler',
             runtime=Runtime.PYTHON_3_6,
-            layers=[TwilioLayer(self, 'TestingTwilioLayer')]
+            layers=[TwilioLayer(self, 'TestingTwilioLayer', boto3_version='1.16.35')]
         )

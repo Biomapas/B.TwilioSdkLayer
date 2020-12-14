@@ -18,7 +18,7 @@ class Layer(LayerVersion):
             'find /tmp/asset-output -type f -name "*.py[co]" -delete',
             'find /tmp/asset-output -type d -name "__pycache__" -delete',
             'cp -R /tmp/asset-output/. /asset-output/.',
-            'ls -la /asset-output/.'
+            'ls -laR /asset-output/.'
         ]
 
         super().__init__(

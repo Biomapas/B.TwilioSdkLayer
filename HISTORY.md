@@ -1,5 +1,8 @@
 # Release history
 
+### 0.0.7
+* Add -R option for better debugging.
+
 ### 0.0.6
 * Add latest boto version to tests.
 

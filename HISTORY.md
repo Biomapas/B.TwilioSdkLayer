@@ -1,5 +1,8 @@
 # Release history
 
+### 0.0.8
+* Ensure consistent builds.
+
 ### 0.0.7
 * Add -R option for better debugging.
 

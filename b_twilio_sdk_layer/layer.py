@@ -15,10 +15,19 @@ class Layer(LayerVersion):
             install_command.append(f'pip install boto3=={boto3_version} -t /tmp/asset-output/python')
 
         build_command = [
-            'find /tmp/asset-output -type f -name "*.py[co]" -delete',
-            'find /tmp/asset-output -type d -name "__pycache__" -delete',
+            # Copy.
             'cp -R /tmp/asset-output/. /asset-output/.',
-            'ls -laR /asset-output/.'
+            'cp -R /asset-input/. /asset-output/.',
+
+            # Cleanup.
+            'find /asset-output/ -type f -name "*.py[co]" -delete',
+            'find /asset-output/ -type d -name "__pycache__" -exec rm -rf {} +',
+            'find /asset-output/ -type d -name "*.dist-info" -exec rm -rf {} +',
+            'find /asset-output/ -type d -name "*.egg-info" -exec rm -rf {} +',
+
+            # Validation.
+            'ls -la /asset-output/python/.',
+            'find /asset-output/ -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum'
         ]
 
         super().__init__(

@@ -1,5 +1,8 @@
 # Release history
 
+### 1.0.1
+* Set aws-cdk@1.x strict version.
+
 ### 1.0.0
 * Restructure project. Start using the new b-cfn-lambda-layer Layer implementation.
 * Add Twilio layer test.

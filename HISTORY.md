@@ -1,5 +1,10 @@
 # Release history
 
+### 1.0.0
+* Restructure project. Start using the new b-cfn-lambda-layer Layer implementation.
+* Add Twilio layer test.
+* Add support for Twilio Python SDK version parameter.
+
 ### 0.0.8
 * Ensure consistent builds.
 

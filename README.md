@@ -59,6 +59,7 @@ Create a lambda function with this layer:
 ```python
 from aws_cdk.aws_lambda import Function, Code, Runtime
 from b_twilio_sdk_layer.layer import Layer as TwilioLayer
+from b_cfn_lambda_layer.package_version import PackageVersion
 
 Function(
     scope=stack,
@@ -67,13 +68,21 @@ Function(
     code=Code.from_asset('/path/to/your/code'),
     handler='index.handler',
     runtime=Runtime.PYTHON_3_8,
-    layers=[TwilioLayer(stack, 'MyCoolTwilioLayer')],
+    layers=[TwilioLayer(
+        stack,
+        'MyCoolTwilioLayer',
+        twilio_sdk_version=PackageVersion.from_string_version('7.4.0')
+    )],
 )
 ```
 
 ### Testing
 
-The project currently has no tests.
+This package has integration tests based on pytest. To run tests simply run:
+
+```
+pytest b_twilio_sdk_layer_test/integration/tests
+```
 
 ### Contribution
 

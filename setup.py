@@ -18,17 +18,19 @@ setup(
         # Exclude virtual environment.
         'venv',
         # Exclude test source files.
-        'b_twilio_sdk_layer_test'
+        'b_twilio_sdk_layer_test',
+        'b_twilio_sdk_layer_test.*'
     ]),
     description=(
         'AWS CDK based lambda layer including Twilio SDK.'
     ),
     long_description=README + '\n\n' + HISTORY,
-    long_description_content_type="text/markdown",
+    long_description_content_type='text/markdown',
     include_package_data=True,
     install_requires=[
-        "aws-cdk.core>=1.54.0,<2.0.0",
-        "aws-cdk.aws_lambda>=1.54.0,<2.0.0",
+        'aws-cdk.core>=1.54.0,<2.0.0',
+        'aws-cdk.aws_lambda>=1.54.0,<2.0.0',
+        'b-cfn-lambda-layer>=1.1.1,<2.0.0'
     ],
     author='Laimonas Sutkus',
     author_email='laimonas.sutkus@biomapas.com',

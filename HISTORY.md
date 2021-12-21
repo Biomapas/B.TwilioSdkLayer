@@ -3,7 +3,7 @@
 ### 1.0.0
 * Restructure project. Start using the new b-cfn-lambda-layer Layer implementation.
 * Add Twilio layer test.
-* Update Twilio Python SDK version from 6.46.0 to 7.4.0.
+* Add support for Twilio Python SDK version parameter.
 
 ### 0.0.8
 * Ensure consistent builds.

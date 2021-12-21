@@ -15,7 +15,11 @@ class Layer(LambdaLayer):
             additional_pip_install_args: Optional[str] = None,
             dependencies: Optional[Dict[str, PackageVersion]] = None,
             docker_image: Optional[DockerImage] = None,
+            twilio_sdk_version: PackageVersion = PackageVersion.latest()
     ) -> None:
+        if not dependencies:
+            dependencies = {}
+
         super().__init__(
             scope,
             name,
@@ -23,7 +27,10 @@ class Layer(LambdaLayer):
             code_runtimes=self.runtimes(),
             include_source_path_directory=True,
             additional_pip_install_args=additional_pip_install_args,
-            dependencies=dependencies,
+            dependencies={
+                'twilio': twilio_sdk_version,
+                **dependencies
+            },
             docker_image=docker_image
         )
 

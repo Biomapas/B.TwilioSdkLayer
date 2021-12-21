@@ -27,7 +27,7 @@ class TestingFunction(Function):
             layers=[
                 Layer(
                     scope=scope,
-                    name=f'{TestingStack.global_prefix()}TestingTwilisoLayer'
+                    name=f'{TestingStack.global_prefix()}TestingTwilioLayer'
                 )
             ]
         )
